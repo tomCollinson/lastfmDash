@@ -1,0 +1,113 @@
+$icon-font-path: "/bower_components/sass-bootstrap/fonts/";
+
+@import 'sass-bootstrap/lib/bootstrap';
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #333;
+}
+
+/* Custom page header */
+.masthead {
+  background-color: black;
+  color: white;
+  padding: 0.5em;
+  
+  .masthead__brand {
+    margin: 0;
+    font-size: 1em;
+    font-weight: bold;
+    }
+}
+
+
+.track {
+  position: relative;
+  float: left;
+  overflow:hidden;
+  height: 20em;
+  width: 20em;
+  background-color: #333;
+  
+  img {
+    height: 100%;
+    width: 100%;
+  }
+  
+  .track__play {
+    font-size: 4em;
+    position: absolute;
+    top: 0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin:auto;
+    text-align:center;
+    height: 1.1em;
+    width: 1.1em;
+    z-index: 3;
+    display: none;
+      
+    a {
+      color: white;
+    }
+  }
+  
+  &:hover {
+    .track__play{
+      display: block;
+    }
+  }
+  .track__info {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 0.5em;
+    color: #fff;
+    background-color: rgba(0,0,0,0.7);
+    display:none;
+    z-index: 1;
+    
+    .track__info-meta{
+      position:absolute;
+      bottom: 0;
+      z-index:2;
+      padding: .5em;
+    }
+  }
+  
+  &:hover .track__info {
+    display:block;
+  }
+}
+
+.track__listeningNow {
+
+  background: red;
+  padding: 0.25em;
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  z-index: 4;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (max-width: 720px) {
+ 
+
+   .track {
+     .track__info {
+        display:block;
+        background: rgba(0,0,0,0.5);
+     }
+     
+     .track__play{
+      display:block;
+     }
+   }
+  
+}

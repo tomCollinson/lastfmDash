@@ -1,0 +1,68 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'install', 'angular-route' ]
+2 info using npm@1.4.3
+3 info using node@v0.10.26
+4 verbose node symlink /usr/bin/node
+5 warn package.json lastfmdash@0.0.0 No description
+6 warn package.json lastfmdash@0.0.0 No repository field.
+7 warn package.json lastfmdash@0.0.0 No README data
+8 verbose readDependencies using package.json deps
+9 verbose cache add [ 'angular-route', null ]
+10 verbose cache add name=undefined spec="angular-route" args=["angular-route",null]
+11 verbose parsed url { protocol: null,
+11 verbose parsed url   slashes: null,
+11 verbose parsed url   auth: null,
+11 verbose parsed url   host: null,
+11 verbose parsed url   port: null,
+11 verbose parsed url   hostname: null,
+11 verbose parsed url   hash: null,
+11 verbose parsed url   search: null,
+11 verbose parsed url   query: null,
+11 verbose parsed url   pathname: 'angular-route',
+11 verbose parsed url   path: 'angular-route',
+11 verbose parsed url   href: 'angular-route' }
+12 silly lockFile 54a09c02-angular-route angular-route
+13 verbose lock angular-route /home/tom/.npm/54a09c02-angular-route.lock
+14 silly lockFile 54a09c02-angular-route angular-route
+15 silly lockFile 54a09c02-angular-route angular-route
+16 verbose addNamed [ 'angular-route', '' ]
+17 verbose addNamed [ null, '*' ]
+18 silly lockFile 44e54571-angular-route angular-route@
+19 verbose lock angular-route@ /home/tom/.npm/44e54571-angular-route.lock
+20 silly addNameRange { name: 'angular-route', range: '*', hasData: false }
+21 verbose url raw angular-route
+22 verbose url resolving [ 'https://registry.npmjs.org/', './angular-route' ]
+23 verbose url resolved https://registry.npmjs.org/angular-route
+24 info trying registry request attempt 1 at 15:04:18
+25 http GET https://registry.npmjs.org/angular-route
+26 http 404 https://registry.npmjs.org/angular-route
+27 silly registry.get cb [ 404,
+27 silly registry.get   { date: 'Fri, 28 Mar 2014 15:04:14 GMT',
+27 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R14B04)',
+27 silly registry.get     'content-type': 'application/json',
+27 silly registry.get     via: '1.1 varnish',
+27 silly registry.get     'cache-control': 'max-age=0',
+27 silly registry.get     'content-length': '52',
+27 silly registry.get     'accept-ranges': 'bytes',
+27 silly registry.get     age: '0',
+27 silly registry.get     'x-served-by': 'cache-v42-ASH, cache-fra1228-FRA',
+27 silly registry.get     'x-cache': 'MISS, MISS',
+27 silly registry.get     'x-cache-hits': '0, 0',
+27 silly registry.get     'x-timer': 'S1396019054.433122396,VS0,VS-341,VE-327,VE113',
+27 silly registry.get     'keep-alive': 'timeout=10, max=50',
+27 silly registry.get     connection: 'Keep-Alive' } ]
+28 silly lockFile 44e54571-angular-route angular-route@
+29 silly lockFile 44e54571-angular-route angular-route@
+30 error 404 'angular-route' is not in the npm registry.
+30 error 404 You should bug the author to publish it
+30 error 404 It was specified as a dependency of 'lastfmdash'
+30 error 404
+30 error 404 Note that you can also install from a
+30 error 404 tarball, folder, or http url, or git url.
+31 error System Linux 3.11.0-15-generic
+32 error command "/usr/bin/node" "/usr/bin/npm" "install" "angular-route"
+33 error cwd /var/www/lastfmDash
+34 error node -v v0.10.26
+35 error npm -v 1.4.3
+36 error code E404
+37 verbose exit [ 1, true ]
