@@ -11,7 +11,7 @@ angular.module('lastfmDashApp')
           AjaxCall.get('query.php', {
             method: 'user.getrecenttracks',
             user: 'crimsonc',
-            limit: 24,
+            limit: 23,
             format: 'json'            
           }).then(function(response){     
           console.log(response);

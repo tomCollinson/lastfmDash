@@ -7,6 +7,6 @@
         <strong ng-bind="track.name"></strong> - <span ng-bind="track.artist['#text']"></span>
       </div>
     </div>
-    <img ng-if="track.image[3]" src="{{track.image[3]['#text']}}"/>
+    <img ng-if="track.image[3]['#text']" ng-src="track.image[3]['#text']"/>
   </div>
 </div>
