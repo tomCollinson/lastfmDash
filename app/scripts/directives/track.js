@@ -40,32 +40,8 @@ angular.module('lastfmDashApp')
       },
       link: function postLink(scope, element, attrs) {
         
-        function resize() {
-        
-          var cols = 1;
-       
-          scope.winWidth = $(window).innerWidth();
-          
-          if (scope.winWidth >= 380 && scope.winWidth < 720) {
-            cols = 2;
-          }
-          else if (scope.winWidth >= 720 && scope.winWidth < 1024){
-            cols = 3
-          }
-          else if (scope.winWidth >= 1024 && scope.winWidth < 1300) {
-            cols = 4
-          } else if (scope.winWidth >= 1300) {
-            cols = 5
-          }
-          element.css({'height': (scope.winWidth/cols), 'width': (scope.winWidth/cols)});
-        }
-        setTimeout(function(){
-          resize();
-        }, 100);
-        
         $(window).on('resize', function(){
-          resize();
+          lastfmDash.resize();
         });
-      }
     };
   });
