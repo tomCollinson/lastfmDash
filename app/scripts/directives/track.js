@@ -40,8 +40,7 @@ angular.module('lastfmDashApp')
       },
       link: function postLink(scope, element, attrs) {
         
-        $(window).on('resize', function(){
-          lastfmDash.resize();
-        });
-    };
+        
+    }
+  };
   });

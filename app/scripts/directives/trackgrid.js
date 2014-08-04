@@ -13,8 +13,7 @@ angular.module('lastfmDashApp')
             user: 'crimsonc',
             limit: 24,
             format: 'json'            
-          }).then(function(response){     
-          console.log(response);
+          }).then(function(response){ 
             $scope.data = response.data.recenttracks;
             
              for (var i = 0; i < $scope.data.track.length; i +=1){
@@ -23,14 +22,17 @@ angular.module('lastfmDashApp')
                   track = $scope.data.track[i].name,
                   query = artist + " - " + track;
                   $scope.data.track[i].spotify = query;
-             }  
+             }
+
+             $timeout(function(){
+              lastfmDash.resizeTrack();
+              lastfmDash.lazyloading();
+             },100)  
             
           });
          
         }
-        
-        
-        
+
         // Interval function to call data ever x minutes
         $scope.intervalFunction = function(){
           $timeout(function() {
@@ -47,7 +49,6 @@ angular.module('lastfmDashApp')
         
       },
       link: function postLink(scope, element, attrs) {
-      
       }
     };
   });

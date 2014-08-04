@@ -4,16 +4,10 @@ var lastfmDash = (function($){
 		but don't belong within controllers or directives, but can be called from them
 	*/
 
-	var methods = {};
-
-	methods.init = function (){
-		//resize();
-	};
-
-
-	var resize = function () {
+	function resize() {
 		var cols = 1,
-			winWidth = $(window).innerWidth();
+			winWidth = $(window).innerWidth(),
+			element = $('.track');
           
           if (winWidth >= 380 && winWidth < 720) {
             cols = 2;
@@ -27,7 +21,34 @@ var lastfmDash = (function($){
             cols = 5
           }
           element.css({'height': (winWidth/cols), 'width': (winWidth/cols)});
-        }
-	};
+        };
+
+	function lazyload() {
+		/*
+			Fires the unveil plugin whenever required
+		*/
+		$('img').unveil();
+	}
+
+	return {
+		init: function () {
+			resize();
+			lazyload();
+			
+		},
+		resizeTrack: resize,
+		lazyloading: lazyload
+	}
 
 })(jQuery);
+
+$(document).ready(function(){
+	lastfmDash.init();
+})
+
+/* Any code to happen on window resize should be here, 
+   not within directives for performance purposes
+*/
+$(window).on('resize', function(){
+  lastfmDash.resizeTrack();
+});
