@@ -6,13 +6,20 @@ describe('Service: ajaxCall', function () {
   beforeEach(module('lastfmDashApp'));
 
   // instantiate service
-  var ajaxCall;
-  beforeEach(inject(function (_ajaxCall_) {
-    ajaxCall = _ajaxCall_;
+  var ajaxCall, httpBackend;
+  
+  beforeEach(inject(function (_AjaxCall_, $httpBackend) {
+    ajaxCall = _AjaxCall_;
+    httpBackend = $httpBackend;
   }));
 
-  it('should do something', function () {
-    expect(!!ajaxCall).toBe(true);
+  it('should make a call to a service', function () {
+    httpBackend.whenGET('query.php').respond([{
+      id: 1,
+      name: "Test Data"
+    }]);
+    
+    expect(ajaxCall.get()).toBeDefined();
   });
 
 });
