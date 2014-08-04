@@ -12,17 +12,20 @@ angular.module('lastfmDashApp')
             method: 'user.getrecenttracks',
             user: 'crimsonc',
             limit: 24,
+            extended: 1,
             format: 'json'            
           }).then(function(response){ 
             $scope.data = response.data.recenttracks;
             
              for (var i = 0; i < $scope.data.track.length; i +=1){
           
-              var artist = $scope.data.track[i].artist['#text'],
+              var artist = $scope.data.track[i].artist.name,
                   track = $scope.data.track[i].name,
                   query = artist + " - " + track;
                   $scope.data.track[i].spotify = query;
              }
+
+             console.log($scope.data);
 
              $timeout(function(){
               lastfmDash.resizeTrack();
